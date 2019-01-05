@@ -4,6 +4,7 @@ $(function(){
     getListDatas('#idthere', 0, datalist3.length);
     getListDataClothing('#idfour', 0, datalist2.length);
     getListCart('#idfive',0 ,listCart.length);
+    console.log(listCart.length);
 });
 
 function writesp(idelm, start, end){
@@ -94,43 +95,23 @@ function getListDataClothing(idfour, start, end){
 
 function getListCart(idfive, start, end){
     
-    for(i = start; i< end; i++){
+    for(i = start; i < end; i++){
         var prd = listCart[i];
-        var html = '  <li>';
-            html +='  <span class="item">';
+        var html ='  <span class="item">';
             html +='   <span class="item-left">';
             html +=' <img src="http://lorempixel.com/50/50/" alt="" />';
             html +=' <span class="item-info">';
-            html +='  <span>'+ prd +'</span>';
-            html +=' <span>'+ prd +'</span>';
+            html +='  <span>'+ prd.type +'</span>';
+            html +=' <span>'+ prd.price +'</span>';
             html +='</span>';
             html +='</span>';
             html +=' <span class="item-right">';
             html +='  <button class="btn btn-xs btn-danger pull-right">x</button>';
             html +='</span>';
             html +='</span>';
-            html += '  </li>';
             $(idfive).append(html);
             
     }
 }
 
 ///Cart///
-var listCart = [];
-function addcart(item){
-    for( i = 0; i<prdlist.length; i++){
-        if(prdlist[i].id == item){
-            listCart.push(prdlist[i].type);
-        }
-    }
-   
-}
- for (let index = 0; index < prdlist.length; index++) {
-     for (let j = 0; index < tempid.length; j++) {
-        if(prdlist[index].id==tempid[j]){
-            prdlist[index].price;
-
-        }
-         
-     }
- }

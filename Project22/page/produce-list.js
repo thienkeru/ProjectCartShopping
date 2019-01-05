@@ -198,3 +198,13 @@ var datalist3 = [
         price: 450,
     },
 ];
+
+var listCart = [];
+function addcart(item){
+    for( i = 0; i<prdlist.length; i++){
+        if(prdlist[i].id == item){
+            listCart.push(prdlist[i]);
+            console.log(listCart);
+        }
+    }  
+}
